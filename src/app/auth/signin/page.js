@@ -1,10 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
+import {  useRouter } from "next/navigation";
+
 import { Container, Card, Form, Button, Alert,Row,Col } from "react-bootstrap";
 import { supabase } from "/lib/supabaseClient";
-
 export default function SignInPage() {
+  //  const params = useParams();
+    const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -72,6 +75,14 @@ export default function SignInPage() {
                 >
                   {loading ? "جاري تسجيل الدخول..." : "تسجيل الدخول"}
                 </Button>
+                  <Button 
+                  className="w-100 mt-2" 
+                  variant="outline-primary" 
+                  size="lg"
+                  onClick={() => router.push("/registration")}
+                >
+                   📝 إنشاء حساب جديد
+                  </Button>
               </Form>
             </Card.Body>
           </Card>
