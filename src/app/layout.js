@@ -23,7 +23,9 @@ export default function RootLayout({ children }) {
       <body style={{ margin: 0, padding: 0, fontFamily: "sans-serif" }}>
         <ClientLayout>
           <NavigationBar />
+            <div style={{ paddingTop: '80px' }}> {/* حسب ارتفاع النافبار */}
           {children}
+           </div>
           <BottomAd />
           <Footer />
         </ClientLayout>
